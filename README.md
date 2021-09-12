@@ -23,12 +23,16 @@ Angular Installation
 - Please make sure that you have a angular 
 - Open Project and make sure you change your END Point url in the Environemnt API URL default is http://exam.test/api 
 - Once you've change that open now your terminal and run 'ng serve' this will run the angular project Todo Application
+- run the npm install 
+- And you are good to GO.
 
 Laravel Installation: 
 - Please make sure that you have latest PHP version atleast PHP 7.2.5
 - Setup your database and edit the .env file 
 - Run the migration using 
    - sh install.sh or php artisan migrate:refresh --seed
+- run the npm install 
+
 
 
 
