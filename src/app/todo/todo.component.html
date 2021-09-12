@@ -1,0 +1,28 @@
+<br>
+<label for="todo">What do you want to do today? </label>
+<div class="input-group mb-3">
+    <input type="text" class="form-control btn-outline-default" id="todo" name="todo" placeholder="Add new..." [(ngModel)]="field.task" (keyup.enter)="addRecord()">
+    <div class="input-group-append">
+        <button class="btn btn-outline-warning" type="button" (click)="addRecord()"><i class="fas fa-plus"></i></button>
+    </div>
+</div>
+<div class="alert alert-secondary" *ngIf="message!=''">{{ message }}</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Todo</th>
+            <th class="text-right">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos">
+            <td [class]="todo['done_at']!==null?'strike':''">  
+                <a href="javascript:void(0)" (click)="updateRecord(todo['id'])" *ngIf="todo['done_at']!==null"><i class="far fa-check-circle"></i></a>                
+                <a href="javascript:void(0)" (click)="updateRecord(todo['id'])" *ngIf="todo['done_at']===null"><i class="far fa-circle"></i></a>
+                {{ todo['task'] }} 
+            </td>
+            <td class="text-right"><a href="javascript:void(0)" (click)="deleteRecord(todo['id'])"><i class="fas fa-trash-alt"></i>
+            </a></td>
+        </tr>
+    </tbody>
+</table>
